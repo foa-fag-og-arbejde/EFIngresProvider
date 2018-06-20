@@ -4,9 +4,10 @@ An Entity Framework provider for Ingres.
 
 ## Notes
 
-This provider only works with Entity Framework 5.
-
-As of now, it has not been published to nuget.org.
+- This provider works with Entity Framework 5
+- Views are treated as tables in the DDEX provider
+- The DDEX provider designates the first column as a primary key for tables and views that do not have a primary key.
+- As of now, this provider has not been published to nuget.org.
 
 ## Build
 
