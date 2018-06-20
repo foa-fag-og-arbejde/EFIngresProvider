@@ -33,7 +33,8 @@ This will produce
   An extension to enable the provider in Visual Studio - only works for Visual Studio 2017, as of now
 
 - `dist/deploy/EFIngresProviderDeploy.exe`   
-  Run this program to enable the provider in Visual Studio < 2017
+  Run this program as administrator to enable the provider in Visual Studio < 2017   
+  _At some point this should be deprecated in favour of making the VSIX package work for Visual Studio 2015._
 
 ## Tests
 
