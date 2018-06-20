@@ -10,6 +10,13 @@ As of now, it has not been published to nuget.org.
 
 ## Build
 
+Before building EFIngresProvider please:
+
+- Make sure [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) is in the path
+- Make sure Visual Studio 2017 is installed
+- Tjek the paths for `MSBuild.exe` and `devenv.com` in `Build.cmd`, and change them, if required.
+- Set up tests as described below
+
 To build the EFIngresProvider run:
 
 ```
@@ -18,13 +25,13 @@ Build.cmd
 
 This will produce
 
-* `dist/EFIngresProvider.<version>.nupkg`   
+- `dist/EFIngresProvider.<version>.nupkg`   
   A NuGet package containing the provider
 
-* `dist/EFIngresProviderVSIX.vsix`   
+- `dist/EFIngresProviderVSIX.vsix`   
   An extension to enable the provider in Visual Studio - only works for Visual Studio 2017, as of now
 
-* `dist/deploy/EFIngresProviderDeploy.exe`   
+- `dist/deploy/EFIngresProviderDeploy.exe`   
   Run this program to enable the provider in Visual Studio < 2017
 
 ## Tests
