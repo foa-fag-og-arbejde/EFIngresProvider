@@ -42,7 +42,7 @@ To set up tests, add a file named `EFIngresProvider.Tests/TestConnection.json`, 
 
 ```json
 {
-  "connectionString": "Server=mytestserver;Port=II7;Database=mytestdb;User ID=me;Password=my-password;Timezone=EUROPE-CENTRAL;VnodeUsage=connect"
+  "connectionString": "Server=mytestserver;Port=II7;Database=mytestdb;User ID=me;Password=my-password;VnodeUsage=connect"
 }
 ```
 
