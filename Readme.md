@@ -46,4 +46,6 @@ To set up tests, add a file named `EFIngresProvider.Tests/TestConnection.json`, 
 }
 ```
 
+This file is ignored by git, and should never be committed, as it will contain sensitive information.
+
 Be aware that the tests create and drop tables while running. So be sure to use an empty database, that is not used for anything else.
