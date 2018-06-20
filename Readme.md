@@ -14,7 +14,7 @@ Before building EFIngresProvider please:
 
 - Make sure [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) is in the path
 - Make sure Visual Studio 2017 is installed
-- Tjek the paths for `MSBuild.exe` and `devenv.com` in `Build.cmd`, and change them, if required.
+- Check the paths for `MSBuild.exe` and `devenv.com` in `Build.cmd`, and change them, if required.
 - Set up tests as described below
 
 To build the EFIngresProvider run:
