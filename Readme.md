@@ -45,4 +45,4 @@ To set up tests, add a file named `EFIngresProvider.Tests/TestConnection.json`, 
 }
 ```
 
-Be aware that the tests create and drop tables while running tests. So be sure to use an empty database, that is not used for anything else.
+Be aware that the tests create and drop tables while running. So be sure to use an empty database, that is not used for anything else.
