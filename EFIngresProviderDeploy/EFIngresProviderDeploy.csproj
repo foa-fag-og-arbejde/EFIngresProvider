@@ -103,7 +103,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="app.manifest" />
-    <None Include="package.json" />
     <None Include="packages.config" />
     <None Include="ProcessPrivileges\ProcessPrivileges.dll.lastcodeanalysissucceeded" />
   </ItemGroup>
