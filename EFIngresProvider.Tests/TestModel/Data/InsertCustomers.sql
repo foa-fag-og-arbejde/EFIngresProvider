@@ -1,0 +1,13 @@
+﻿INSERT INTO Customers VALUES('ALFKI', 'Alfreds Futterkiste', 'Maria Anders', 'Sales Representative', 'Obere Str. 57', 'Berlin',NULL,'12209', 'Germany', '030-0074321', '030-0076545', date('now'));
+INSERT INTO Customers VALUES('ANATR', 'Ana Trujillo Emparedados y helados', 'Ana Trujillo', 'Owner', 'Avda. de la Constitución 2222', 'México D.F.',NULL,'05021', 'Mexico', '(5) 555-4729', '(5) 555-3745', date('5 hrs 3 mins 5 secs'));
+INSERT INTO Customers VALUES('ANTON', 'Antonio Moreno Taquería', 'Antonio Moreno', 'Owner', 'Mataderos 2312', 'México D.F.',NULL,'05023', 'Mexico', '(5) 555-3932',NULL, date('now'));
+INSERT INTO Customers VALUES('AROUT', 'Around the Horn', 'Thomas Hardy', 'Sales Representative', '120 Hanover Sq.', 'London',NULL,'WA1 1DP', 'UK', '(171) 555-7788', '(171) 555-6750', date('now'));
+INSERT INTO Customers VALUES('BERGS', 'Berglunds snabbköp', 'Christina Berglund', 'Order Administrator', 'Berguvsvägen 8', 'Luleå',NULL,'S-958 22', 'Sweden', '0921-12 34 65', '0921-12 34 67', date('now'));
+INSERT INTO Customers VALUES('BLAUS', 'Blauer See Delikatessen', 'Hanna Moos', 'Sales Representative', 'Forsterstr. 57', 'Mannheim',NULL,'68306', 'Germany', '0621-08460', '0621-08924', date('now'));
+INSERT INTO Customers VALUES('BLONP', 'Blondesddsl père et fils', 'Frédérique Citeaux', 'Marketing Manager', '24,place Kléber', 'Strasbourg',NULL,'67000', 'France', '88.60.15.31', '88.60.15.32', date('now'));
+INSERT INTO Customers VALUES('BOLID', 'Bólido Comidas preparadas', 'Martín Sommer', 'Owner', 'C/ Araquil,67', 'Madrid',NULL,'28023', 'Spain', '(91) 555 22 82', '(91) 555 91 99', date('now'));
+INSERT INTO Customers VALUES('LACOR', 'La corne d''abondance', 'Daniel Tonini', 'Sales Representative', '67,avenue de l''Europe', 'Versailles',NULL,'78000', 'France', '30.59.84.10', '30.59.85.11', date('now'));
+INSERT INTO Customers VALUES('LAMAI', 'La maison d''Asie', 'Annette Roulet', 'Sales Manager', '1 rue Alsace-Lorraine', 'Toulouse',NULL,'31000', 'France', '61.77.61.10', '61.77.61.11', date('now'));
+INSERT INTO Customers VALUES('LAUGB', 'Laughing Bacchus Wine Cellars', 'Yoshi Tannamuri', 'Marketing Assistant', '1900 Oak St.', 'Vancouver', 'BC', 'V3F 2K1', 'Canada', '(604) 555-3392', '(604) 555-7293', date('now'));
+INSERT INTO Customers VALUES('LAZYK', 'Lazy K Kountry Store', 'John Steel', 'Marketing Manager', '12 Orchestra Terrace', 'Walla Walla', 'WA', '99362', 'USA', '(509) 555-7969', '(509) 555-6221', date('now'));
+INSERT INTO Customers VALUES('LEHMS', 'Lehmanns Marktstand', 'Renate Messner', 'Sales Representative', 'Magazinweg 7', 'Frankfurt a.M.',NULL,'60528', 'Germany', '069-0245984', '069-0245874', date('now'));

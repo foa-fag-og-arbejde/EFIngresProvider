@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>EFIngresProvider</id>
+    <version>1.2.11</version>
+    <title>EFIngresProvider</title>
+    <authors>Morten Houston Ludvigsen</authors>
+    <owners>FOA - Fag og Arbejde</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Ingres provider til Entity Framework 5</description>
+    <releaseNotes />
+    <copyright>Copyright © FOA - Fag og Arbejde 2013</copyright>
+    <dependencies>
+      <dependency id="EntityFramework" version="5.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Ingres .NET Data Provider\v2.1\Ingres.Client.*" target="lib\net45" />
+  </files>
+</package>

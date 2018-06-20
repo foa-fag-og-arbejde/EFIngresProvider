@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{445544EF-29E0-4589-83C5-CD011C16E766}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EFIngresProvider</RootNamespace>
+    <AssemblyName>EFIngresProvider</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\EFIngresProvider.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Release\EFIngresProvider.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\EFIngresProvider.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Ingres.Client, Version=2.1.0.0, Culture=neutral, PublicKeyToken=363043b363d069c5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Ingres .NET Data Provider\v2.1\Ingres.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="EFIngresCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EFIngresCommandEventArgs.cs" />
+    <Compile Include="EFIngresCommandException.cs" />
+    <Compile Include="EFIngresConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EFIngresConnectionEventArgs.cs" />
+    <Compile Include="EFIngresConnectionStringBuilder.cs" />
+    <Compile Include="EFIngresDataReader.cs" />
+    <Compile Include="EFIngresException.cs" />
+    <Compile Include="EFIngresFunctions.Compare.cs">
+      <DependentUpon>EFIngresFunctions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EFIngresFunctions.cs" />
+    <Compile Include="EFIngresProviderFactory.cs" />
+    <Compile Include="EFIngresProviderInstaller.cs" />
+    <Compile Include="EFIngresProviderManifest.cs" />
+    <Compile Include="EFIngresProviderServices.cs" />
+    <Compile Include="EFIngresStoreVersion.cs" />
+    <Compile Include="Helpers\CommandTreeUtils.cs" />
+    <Compile Include="Helpers\CultureReestablisher.cs" />
+    <Compile Include="Helpers\EFIngresForeignKeyColumns.cs" />
+    <Compile Include="Helpers\EntityUtils.cs" />
+    <Compile Include="Helpers\IngresCatalogs\CatalogHelper.cs" />
+    <Compile Include="Helpers\IngresCatalogs\CatalogHelpers.cs" />
+    <Compile Include="Helpers\IngresCatalogs\Constraint.cs" />
+    <Compile Include="Helpers\IngresCatalogs\EFIngresCheckConstraints.cs" />
+    <Compile Include="Helpers\IngresCatalogs\EFIngresConstraintColumns.cs" />
+    <Compile Include="Helpers\IngresCatalogs\EFIngresConstraints.cs" />
+    <Compile Include="Helpers\IngresCatalogs\EFIngresForeignKeyConstraints.cs" />
+    <Compile Include="Helpers\IngresCatalogs\EFIngresForeignKeys.cs" />
+    <Compile Include="Helpers\IngresCatalogs\EFIngresFunctionParameters.cs" />
+    <Compile Include="Helpers\IngresCatalogs\EFIngresFunctions.cs" />
+    <Compile Include="Helpers\IngresCatalogs\EFIngresProcedureParameters.cs" />
+    <Compile Include="Helpers\IngresCatalogs\EFIngresProcedures.cs" />
+    <Compile Include="Helpers\IngresCatalogs\EFIngresTableColumns.cs" />
+    <Compile Include="Helpers\IngresCatalogs\EFIngresTables.cs" />
+    <Compile Include="Helpers\IngresCatalogs\EFIngresViewColumns.cs" />
+    <Compile Include="Helpers\IngresCatalogs\EFIngresViewConstraintColumns.cs" />
+    <Compile Include="Helpers\IngresCatalogs\EFIngresViewConstraints.cs" />
+    <Compile Include="Helpers\IngresCatalogs\EFIngresViewForeignKeys.cs" />
+    <Compile Include="Helpers\IngresCatalogs\EFIngresViews.cs" />
+    <Compile Include="Helpers\IngresCatalogs\ForeignKey.cs" />
+    <Compile Include="Helpers\IngresCatalogs\ObjectReader.cs" />
+    <Compile Include="Helpers\IngresDateData.cs" />
+    <Compile Include="Helpers\MetadataHelpers.cs" />
+    <Compile Include="Helpers\MethodParameter.cs" />
+    <Compile Include="Helpers\ReflectionHelpers.cs" />
+    <Compile Include="Helpers\SqlScript.cs" />
+    <Compile Include="Helpers\WrappedMethods.cs" />
+    <Compile Include="IngresDate\IngresDate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlGen\ColumnSymbol.cs" />
+    <Compile Include="SqlGen\DdlBuilder.cs" />
+    <Compile Include="SqlGen\DmlSqlGenerator.cs" />
+    <Compile Include="SqlGen\Functions\AddDateTimeHandler.cs" />
+    <Compile Include="SqlGen\Functions\AddDaysHandler.cs" />
+    <Compile Include="SqlGen\Functions\AddHoursHandler.cs" />
+    <Compile Include="SqlGen\Functions\AddMinutesHandler.cs" />
+    <Compile Include="SqlGen\Functions\AddMonthsHandler.cs" />
+    <Compile Include="SqlGen\Functions\AddSecondsHandler.cs" />
+    <Compile Include="SqlGen\Functions\AddTimeFunctionHandler.cs" />
+    <Compile Include="SqlGen\Functions\AddYearsHandler.cs" />
+    <Compile Include="SqlGen\Functions\CanonicalFunctions.cs" />
+    <Compile Include="SqlGen\Functions\CompareFunctionHandler.cs" />
+    <Compile Include="SqlGen\Functions\CreateDateTimeHandler.cs" />
+    <Compile Include="SqlGen\Functions\CreateDateTimeBaseHandler.cs" />
+    <Compile Include="SqlGen\Functions\CreateDateTimeOffsetHandler.cs" />
+    <Compile Include="SqlGen\Functions\CreateTimeHandler.cs" />
+    <Compile Include="SqlGen\Functions\DayOfYearHandler.cs" />
+    <Compile Include="SqlGen\Functions\DiffSecondFractionsHandler.cs" />
+    <Compile Include="SqlGen\Functions\DiffTimeHandler.cs" />
+    <Compile Include="SqlGen\Functions\FunctionHandler.cs" />
+    <Compile Include="SqlGen\Functions\ContainsHandler.cs" />
+    <Compile Include="SqlGen\Functions\DefaultFunctionHandler.cs" />
+    <Compile Include="SqlGen\Functions\EndsWithHandler.cs" />
+    <Compile Include="SqlGen\Functions\IndexOfHandler.cs" />
+    <Compile Include="SqlGen\Functions\NamedFunctionHandler.cs" />
+    <Compile Include="SqlGen\Functions\NotSupportedHandler.cs" />
+    <Compile Include="SqlGen\Functions\PatternHandlerBase.cs" />
+    <Compile Include="SqlGen\Functions\RoundHandler.cs" />
+    <Compile Include="SqlGen\Functions\StartsWithHandler.cs" />
+    <Compile Include="SqlGen\Functions\OperatorHandlerBase.cs" />
+    <Compile Include="SqlGen\Functions\LikeFunctionHandler.cs" />
+    <Compile Include="SqlGen\Functions\SubstringHandler.cs" />
+    <Compile Include="SqlGen\Functions\SubtractTimeFunctionHandler.cs" />
+    <Compile Include="SqlGen\Functions\TruncateTimeHandler.cs" />
+    <Compile Include="SqlGen\IntervalBase.cs" />
+    <Compile Include="SqlGen\IntervalDayToSecond.cs" />
+    <Compile Include="SqlGen\IntervalYearToMonth.cs" />
+    <Compile Include="SqlGen\ISqlFragment.cs" />
+    <Compile Include="SqlGen\JoinSymbol.cs" />
+    <Compile Include="SqlGen\SelectColumn.cs" />
+    <Compile Include="SqlGen\SelectColumnList.cs" />
+    <Compile Include="SqlGen\SqlBuilder.cs" />
+    <Compile Include="SqlGen\SqlExtensions.cs" />
+    <Compile Include="SqlGen\SqlGenerator.cs" />
+    <Compile Include="SqlGen\SqlGenerator\SqlGeneratorCommonVisitors.cs" />
+    <Compile Include="SqlGen\SqlGenerator\SqlGeneratorDbExpressionVisitorMembers.cs" />
+    <Compile Include="SqlGen\SqlGenerator\SqlGeneratorHelpers.cs" />
+    <Compile Include="SqlGen\SqlSelectStatement.cs" />
+    <Compile Include="SqlGen\SqlWriter.cs" />
+    <Compile Include="SqlGen\StringFragment.cs" />
+    <Compile Include="SqlGen\Symbol.cs" />
+    <Compile Include="SqlGen\SymbolPair.cs" />
+    <Compile Include="SqlGen\SymbolTable.cs" />
+    <Compile Include="SqlGen\TopClause.cs" />
+    <Compile Include="TestSqlGen\ISqlFragment.cs" />
+    <Compile Include="TestSqlGen\SqlWriter.cs" />
+    <Compile Include="TestSqlGen\TestSqlGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\EFIngresProviderServices.ProviderManifest.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <Content Include="Web.config.transform" />
+    <Content Include="App.config.transform" />
+    <None Include="Ingres .NET Data Provider\v2.1\Ingres.Client.dll" />
+    <None Include="Ingres .NET Data Provider\v2.1\Ingres.Client.xml" />
+    <None Include="Ingres .NET Data Provider\v2.1\Ingres.Install.dll" />
+    <None Include="Ingres .NET Data Provider\v2.1\Ingres.Support.dll" />
+    <None Include="Ingres .NET Data Provider\v2.1\Ingres.VSDesign.dll" />
+    <None Include="Ingres .NET Data Provider\v2.1\Ingres.Install.InstallState" />
+    <None Include="EFIngresProvider.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Resources\Common.ProviderManifest.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="Resources\EFIngresProviderServices.StoreSchemaDefinition.ssdl">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\EFIngresProviderServices.StoreSchemaMapping.msl">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Resources\System.Data.Resources.CSDLSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\System.Data.Resources.CSMSL.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\System.Data.Resources.EntityStoreSchemaGenerator.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\System.Data.Resources.SSDLSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PostBuildEvent>$(TargetDir)InstallEFIngresProvider.cmd</PostBuildEvent>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>node $(SolutionDir)\UpdateVersions.js $(ConfigurationName)</PreBuildEvent>
+  </PropertyGroup>
+  <Target Name="Clean">
+    <PropertyGroup>
+      <IsCleaning>true</IsCleaning>
+    </PropertyGroup>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
