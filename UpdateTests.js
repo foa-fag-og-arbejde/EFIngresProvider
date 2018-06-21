@@ -8,26 +8,22 @@ const EFIngresProviderTestsDir = resolve(SolutionDir, 'EFIngresProvider.Tests');
 
 if (args[0] === 'reset') {
     console.log(`Resetting connection information for tests`);
-    //resetTestModelEdmx();
-    resetTestConnectionCs();
+    resetTestModelEdmx();
 } else {
     const testConnection = readTestConnection();
     console.log(`Updating connection information for tests`);
     updateTestModelEdmx(testConnection.schema);
-    updateTestConnectionCs(testConnection.connectionString);
 }
 
 function readTestConnection() {
     const path = resolve(EFIngresProviderTestsDir, 'TestConnection.json');
     try {
-        console.log(path);
         const testConnectionJson = fs.readFileSync(path, 'utf8');
         const testConnection = JSON.parse(fs.readFileSync(path, 'utf8'));
         if (!testConnection.connectionString) {
             throw new Error(`To build EFIngresProvider.Tests the file ${fmtPath(path)} must contain a valid JSON with property "connectionString"`);
         }
 
-        console.log(testConnection);
         const properties = getConnectionStringProperties(testConnection.connectionString);
         testConnection.schema = testConnection.schema || properties['dbms_user'] || properties['user id'] || 'schema';
         return testConnection;
@@ -49,22 +45,6 @@ function resetTestModelEdmx() {
     const oldContents = fs.readFileSync(path, 'utf8');
     const newContents = oldContents
         .replace(/<EntitySet([^>]*)Schema="[^"]*"/g, `<EntitySet$1Schema="efingres"`);
-    updateFileIfChanged(path, oldContents, newContents);
-}
-
-function updateTestConnectionCs(connectionString) {
-    const path = resolve(EFIngresProviderTestsDir, 'TestConnection.cs');
-    const oldContents = fs.readFileSync(path, 'utf8');
-    const newContents = oldContents
-        .replace(/public const string ConnectionString = \@"[^"]*";/, `public const string ConnectionString = \@"${connectionString}";`);
-    updateFileIfChanged(path, oldContents, newContents);
-}
-
-function resetTestConnectionCs() {
-    const path = resolve(EFIngresProviderTestsDir, 'TestConnection.cs');
-    const oldContents = fs.readFileSync(path, 'utf8');
-    const newContents = oldContents
-        .replace(/public const string ConnectionString = \@"[^"]*";/, `public const string ConnectionString = \@"";`);
     updateFileIfChanged(path, oldContents, newContents);
 }
 

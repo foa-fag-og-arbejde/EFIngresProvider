@@ -16,6 +16,7 @@ namespace EFIngresProvider.Tests
     public class TestHelper
     {
         public const string ProviderName = "EFIngresProvider";
+        public TestConnection TestConnection { get; } = TestConnection.Load();
 
         public string ConnectionString => TestConnection.TestEntities;
 

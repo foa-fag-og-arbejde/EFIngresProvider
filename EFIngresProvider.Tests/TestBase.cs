@@ -4,6 +4,7 @@ using System;
 namespace EFIngresProvider.Tests
 {
     [TestClass]
+    [DeploymentItem(@"TestConnection.json")]
     public abstract class TestBase
     {
         public TestBase()
