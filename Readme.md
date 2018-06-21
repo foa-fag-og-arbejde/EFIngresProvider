@@ -13,10 +13,11 @@ An Entity Framework provider for Ingres.
 
 Before building EFIngresProvider please:
 
-- Make sure [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) is in the path
-- Make sure Visual Studio 2017 is installed
+- Make sure [Node.js](https://nodejs.org/) is installed.
+- Make sure [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) is in the path.
+- Make sure Visual Studio 2017 is installed.
 - Check the paths for `MSBuild.exe` and `devenv.com` in `Build.cmd`, and change them, if required.
-- Set up tests as described below
+- Set up tests as described below.
 
 To build the EFIngresProvider run:
 
@@ -38,8 +39,6 @@ This will produce
 
 ## Tests
 
-NOTE building tests require Node.js to be installed, available from https://nodejs.org/
-
 To set up tests, add a file named `EFIngresProvider.Tests/TestConnection.json`, containing a connection string. F.ex.:
 
 ```json
@@ -49,5 +48,15 @@ To set up tests, add a file named `EFIngresProvider.Tests/TestConnection.json`, 
 ```
 
 This file is ignored by git, and should never be committed, as it will contain sensitive information.
+
+After creating `EFIngresProvider.Tests/TestConnection.json`, and after any commit to git, please run:
+
+```
+setup.cmd
+```
+
+This script does two things:
+- It changes the schema name for test tables in `EFIngresProvider.Tests/TestModel/TestModel.edmx` to the effective database user (`"Dbms_user"` or `"User ID"`) supplied in the connection string.
+- It installs a pre-commit hook in the git repository, that resets the schema name to `"efingres"` for test tables in `EFIngresProvider.Tests/TestModel/TestModel.edmx`.
 
 Be aware that the tests create and drop tables while running. So be sure to use an empty database, that is not used for anything else.
