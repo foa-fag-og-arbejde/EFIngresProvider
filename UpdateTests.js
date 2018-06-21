@@ -7,7 +7,7 @@ const SolutionDir = resolve(__dirname);
 const EFIngresProviderTestsDir = resolve(SolutionDir, 'EFIngresProvider.Tests');
 
 if (args[0] === 'reset') {
-    resetTestModelEdmx('efingres');
+    updateTestModelEdmx('efingres');
 } else {
     const testConnection = readTestConnection();
     updateTestModelEdmx(testConnection.schema);
