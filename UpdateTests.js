@@ -7,11 +7,9 @@ const SolutionDir = resolve(__dirname);
 const EFIngresProviderTestsDir = resolve(SolutionDir, 'EFIngresProvider.Tests');
 
 if (args[0] === 'reset') {
-    console.log(`Resetting connection information for tests`);
-    resetTestModelEdmx();
+    resetTestModelEdmx('efingres');
 } else {
     const testConnection = readTestConnection();
-    console.log(`Updating connection information for tests`);
     updateTestModelEdmx(testConnection.schema);
 }
 
@@ -37,14 +35,6 @@ function updateTestModelEdmx(schema) {
     const oldContents = fs.readFileSync(path, 'utf8');
     const newContents = oldContents
         .replace(/<EntitySet([^>]*)Schema="[^"]*"/g, `<EntitySet$1Schema="${schema}"`);
-    updateFileIfChanged(path, oldContents, newContents);
-}
-
-function resetTestModelEdmx() {
-    const path = resolve(EFIngresProviderTestsDir, 'TestModel/TestModel.edmx');
-    const oldContents = fs.readFileSync(path, 'utf8');
-    const newContents = oldContents
-        .replace(/<EntitySet([^>]*)Schema="[^"]*"/g, `<EntitySet$1Schema="efingres"`);
     updateFileIfChanged(path, oldContents, newContents);
 }
 

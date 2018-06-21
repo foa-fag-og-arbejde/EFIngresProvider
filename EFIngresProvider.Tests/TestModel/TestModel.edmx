@@ -47,9 +47,9 @@
           <Property Name="name" Type="varchar" MaxLength="40" Nullable="false" />
         </EntityType>
         <EntityContainer Name="sysgen_efingres_unittestModelStoreContainer">
-          <EntitySet Name="ansaettelse" EntityType="Self.ansaettelse" Schema="efingres" store:Type="Tables" />
-          <EntitySet Name="customers" EntityType="Self.customers" Schema="efingres" store:Type="Tables" />
-          <EntitySet Name="errortest" EntityType="Self.errortest" Schema="efingres" store:Type="Tables" />
+          <EntitySet Name="ansaettelse" EntityType="Self.ansaettelse" Schema="fkswu" store:Type="Tables" />
+          <EntitySet Name="customers" EntityType="Self.customers" Schema="fkswu" store:Type="Tables" />
+          <EntitySet Name="errortest" EntityType="Self.errortest" Schema="fkswu" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
