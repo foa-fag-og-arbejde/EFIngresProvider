@@ -40,7 +40,7 @@ This will produce
 
 NOTE building tests require Node.js to be installed, available from https://nodejs.org/
 
-To set up tests, add a file named `EFIngresProvider.Tests/TestConnection.json`, containing a connection string. F.ex.:
+To set up tests, add a file named `EFIngresProvider.Tests/TestConnection.json`, containing a connection string. For example:
 
 ```json
 {
