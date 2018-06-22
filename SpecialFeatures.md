@@ -98,7 +98,7 @@ Each time a command is executed the sql gets modified:
 All dates in _fiksdb_ are represented as ingres dates. I implemented type `EFIngresProvider.IngresDate` to have
 semantics as close to ingres dates as possible, so that it can handle date times, intervals and empty dates.
 
-Sadly, I could not only make this work for ADO.NET, but not for Entity Framework. I could not find a way to use
+Sadly, I could only make this work for ADO.NET, not for Entity Framework. I could not find a way to use
 user defined types in Entity Framework.
 
 ### Formatting ingres dates
