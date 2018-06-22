@@ -146,7 +146,7 @@ This method is used by `EFIngresCommand` to format parameters of types `IngresDa
 
 As noted above, I was not able to make Entity Framework use `IngresDate` directly.
 To handle ingres date intervals the `IngresDate` constructor converts any `System.DateTime` value less than or equal to `1500-01-01` to the
-`System.TimeSpan` value calculated be subtracting `1000-01-01` from the value.
+`System.TimeSpan` value calculated by subtracting `1000-01-01` from the value.
 
 It also defines static method `ToTimeSpan`, that converts a value according to the following rules:
 
@@ -162,9 +162,11 @@ It also defines static method `ToTimeSpan`, that converts a value according to t
 
 In FOA we use the database first approach to making Entity Framework models as `.edmx` files.
 
-How to get the data for this is implemented in the project `EFIngresDDEXProvider`.
+The project `EFIngresDDEXProvider` implements data source for this.
 
 There are a couple of features, I have implemented, to make the models work well with _fiksdb_.
+These features are always enabled, but I imagine they could be turned on and of using parameters
+in the connection string.
 
 ### Views are modelled as tables
 
@@ -178,4 +180,5 @@ For this reason we decided to model views as tables.
 _fiksdb_ has a number of tables, that do not have any keys (they are structured as `heap`). All of these
 tables have the first column as a _logical key_.
 
-To support this, the DDEX provider designates the first column as a primary key for tables and views that do not have a key.
+To support this, the DDEX provider designates the first column as a primary key for tables and views that
+do not have a key.
