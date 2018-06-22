@@ -163,7 +163,7 @@ It also defines static method `ToTimeSpan`, that converts a value according to t
 
 In FOA we use the database first approach to making Entity Framework models as `.edmx` files.
 
-There are a couple of features, I have implemented, to make the models work well with _fiksdb_.
+I have implemented a couple of features to make the models work well with _fiksdb_.
 These features are always enabled, but I imagine they could be turned on and of using parameters
 in the connection string.
 
