@@ -16,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Build.cmd = Build.cmd
 		LICENSE.txt = LICENSE.txt
 		Readme.md = Readme.md
+		SpecialFeatures.md = SpecialFeatures.md
 		UpdateTests.js = UpdateTests.js
 		UpdateVersions.js = UpdateVersions.js
 		Version.txt = Version.txt

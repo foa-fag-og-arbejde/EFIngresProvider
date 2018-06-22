@@ -2,6 +2,10 @@
 
 An Entity Framework provider for Ingres.
 
+## Special features in EFIngresProvider
+
+See: [Special features in EFIngresProvider](SpecialFeatures.md)
+
 ## Notes
 
 - This provider only works with Entity Framework 5
