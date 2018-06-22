@@ -90,8 +90,9 @@ Each time a command is executed the sql gets modified:
   `EFIngresProvider.IngresDate.Format` (see [IngresDate](#ingresdate)).
 
 * Any tables with schema `EFIngres` (for example `EFIngres.EFIngresTables`) get converted to special session
-  tables, that are populated using catalog helpers (see class `EFIngresProvider.Helpers.IngresCatalogs.CatalogHelpers`).   
-  _I'm not sure we actually use this functionality any more._
+  tables, that are automatically populated using catalog helpers (see class `EFIngresProvider.Helpers.IngresCatalogs.CatalogHelpers`).   
+  These tables are used when updating an `edmx` data model from a database as defined in `EFIngresProvider/Resources/EFIngresProviderServices.StoreSchemaDefinition.ssdl`.   
+  _I'm pretty sure there is a better way of doing this._
 
 ## IngresDate
 
@@ -162,8 +163,6 @@ It also defines static method `ToTimeSpan`, that converts a value according to t
 
 In FOA we use the database first approach to making Entity Framework models as `.edmx` files.
 
-The project `EFIngresDDEXProvider` implements data source for this.
-
 There are a couple of features, I have implemented, to make the models work well with _fiksdb_.
 These features are always enabled, but I imagine they could be turned on and of using parameters
 in the connection string.
@@ -180,5 +179,5 @@ For this reason we decided to model views as tables.
 _fiksdb_ has a number of tables, that do not have any keys (they are structured as `heap`). All of these
 tables have the first column as a _logical key_.
 
-To support this, the DDEX provider designates the first column as a primary key for tables and views that
+To support this, the provider designates the first column as a primary key for tables and views that
 do not have a key.
